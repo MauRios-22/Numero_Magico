@@ -28,7 +28,7 @@ body {
     font-family: Georgia, 'Times New Roman', serif;
     background: linear-gradient(135deg, #000000 0%, #1a0f0a 50%, #3d2817 100%);
     background-attachment: fixed;
-    background-image: url('../assets/images/background.gif');
+    background-image: url('../assets/images/background.GIF');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
