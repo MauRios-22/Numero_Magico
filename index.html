@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número Mágico - Juego</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="game-card">
+            <h1>¡Número Mágico!</h1>
+            <p class="subtitle">Adivina el número entre 1 y 100 ¿Podras alcanzar el descanso?</p>
+
+            <!-- Información del juego -->
+            <div class="game-info">
+                <div class="info-item">
+                    <span class="info-label">Intentos:</span>
+                    <span class="info-value" id="attempts">1</span> / 10
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Restantes:</span>
+                    <span class="info-value" id="remaining">10</span>
+                </div>
+            </div>
+
+            <!-- Animación del viaje a la fogata -->
+            <div class="journey-container">
+                <div class="journey-track">
+                    <img class="character-icon" id="characterIcon" src="assets/images/personaje.gif" alt="Personaje" />
+                    <img class="bonfire-destination" id="bonfireIcon" src="assets/images/fogata.gif" alt="Fogata" />
+                </div>
+                <p class="journey-text" id="journeyText">🌍 Muy lejos aún...</p>
+            </div>
+
+            <!-- Sección de entrada -->
+            <div class="input-section">
+                <input 
+                    type="number" 
+                    id="guessInput" 
+                    placeholder="Ingresa tu número" 
+                    min="1" 
+                    max="100"
+                    class="input-field"
+                >
+                <button id="submitBtn" class="btn btn-submit">AVANZAR</button>
+            </div>
+
+            <!-- Mensaje de feedback -->
+            <div id="feedbackMessage" class="feedback-message"></div>
+
+            <!-- Historial de intentos -->
+            <div class="history-section">
+                <h3>Intentos Anteriores:</h3>
+                <div id="attemptsList" class="attempts-list">
+                    <p class="empty-message">Sin intentos aún</p>
+                </div>
+            </div>
+
+            <!-- Botón para reiniciar -->
+            <button id="resetBtn" class="btn btn-reset" style="display: none;">🔁 Volver a Jugar</button>
+        </div>
+    </div>
+
+    <!-- Contenedor para GIF de victoria -->
+    <div id="victoryGifContainer" class="gif-container hidden">
+        <div class="gif-overlay-text" id="victoryText">🔥 FOGATA ENCENDIDA 🔥</div>
+        <img id="victoryGif" src="assets/images/victoria.gif" alt="Victoria" class="overlay-gif" />
+    </div>
+
+    <!-- Contenedor para GIF de derrota -->
+    <div id="defeatGifContainer" class="gif-container hidden">
+        <div class="gif-overlay-text" id="defeatText">💥DERROTADO💥</div>
+        <img id="defeatGif" src="assets/images/derrota.gif" alt="Derrota" class="overlay-gif" />
+    </div>
+
+    <!-- Audio de juego -->
+    <audio id="musicaFondo" src="assets/sounds/fondo.mp3" loop></audio>
+    <audio id="musicaVictoria" src="assets/sounds/victoria.mp3"></audio>
+    <audio id="musicaDerrota" src="assets/sounds/derrota.mp3"></audio>
+
+    <script src="java/numero_magico.js"></script>
+</body>
+</html>
